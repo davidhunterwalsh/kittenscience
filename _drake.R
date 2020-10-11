@@ -6,6 +6,6 @@ source('plan.R')
 
 drake_config(
   the_plan,
-  trigger    = trigger(condition = TRUE),
+  # trigger    = trigger(condition = TRUE),
   lock_envir = FALSE
 )
