@@ -1,0 +1,18 @@
+---
+title: "Untitled Draft"
+author: "Report Author"
+date: "`r format(Sys.time(), '%d %B, %Y')`"
+output: md_document
+---
+
+```{r setup, include = FALSE}
+with(opts_chunk, set(echo = FALSE))
+```
+
+# Kitten Science.
+
+Serious business.
+
+```{r weights_plot}
+readd(plot)
+```
