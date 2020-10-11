@@ -3,4 +3,4 @@
 drake::r_make()
 
 # Remove the empty, left-over, ggsave()-created plot
-file.remove('Rplot001.jpg')
+if (file.exists('Rplot001.jpg')) file.remove('Rplot001.jpg')
