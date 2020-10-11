@@ -13,6 +13,8 @@ with(opts_chunk, set(echo = FALSE))
 
 Serious business.
 
-```{r weights_plot}
+```{r weights_plot, include = FALSE}
 readd(plot)
 ```
+
+![](https://raw.githubusercontent.com/davidhunterwalsh/kittenscience/blob/master/readme_files/figure-markdown_strict/weights_plot-1.png)
