@@ -23,7 +23,7 @@ make_weights_plot <- function(data) {
     stat_summary(fun = mean, geom = 'line', color = 'darkgray') %+%
     # Add some whitespace between the axis labels and the plot
     scale_x_datetime('\nTimestamp') %+%
-    scale_y_continuous('Weight\n', labels = weight_scale) %+% 
+    scale_y_continuous('Weight\n', labels = scale_weights) %+% 
     labs(
       title   = 'Kitten Weights',
       caption = 'Note: Gray line shows mean weights at feeding times'
