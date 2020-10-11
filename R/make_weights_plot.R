@@ -1,19 +1,10 @@
 make_weights_plot <- function(data) {
   
+  # Define a pretty labeling function for weights in pounds and ounces
   weight_scale <- function(ounces) {
-
     pounds <- ounces %>% divide_by(16) %>% floor()
-    
     ounces %<>% mod(16)
-    
     str_glue('{pounds}lb{ounces}oz') %>% str_remove('0lb')
-    
-  }
-  
-  round_datetime_limits <- function(default_limits) {
-    default_limits %>% 
-      modify_at(1, floor_date, 'days') %>% 
-      modify_at(2, ceiling_date, 'days')
   }
   
   data %>% 
@@ -24,9 +15,13 @@ make_weights_plot <- function(data) {
       values_drop_na = TRUE
     ) %>% 
     ggplot(aes(Timestamp, Weight)) %+%
+    # Plot the datapoints
     geom_point(aes(color = Kitten)) %+%
+    # Make the loess lines
     geom_smooth(aes(color = Kitten), method = 'loess', formula = 'y ~ x') %+%
+    # Add the mean line
     stat_summary(fun = mean, geom = 'line', color = 'darkgray') %+%
+    # Add some whitespace between the axis labels and the plot
     scale_x_datetime('\nTimestamp') %+%
     scale_y_continuous('Weight\n', labels = weight_scale) %+% 
     labs(
