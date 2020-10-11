@@ -1,0 +1,8 @@
+library(conflicted)
+library(dotenv)
+library(drake)
+library(googledrive)
+library(googlesheets4)
+library(lubridate)
+library(magrittr)
+library(tidyverse)
