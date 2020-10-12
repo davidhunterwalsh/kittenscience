@@ -2,7 +2,7 @@ the_plan <- drake_plan(
 
   data        = target(
     trigger = trigger(condition = TRUE),
-    read_sheet('1Eo23GqsjOYIW0Y2bKzJBcmcPj0iXVqIsEzfDjPAALa8')
+    etl_data()
   ),
   
   plot        = target(
