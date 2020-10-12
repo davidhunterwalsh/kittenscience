@@ -12,6 +12,8 @@ the_plan <- drake_plan(
   
   plot_jpeg   = ggsave(file_out('img/Kitten_Weights.jpeg'), plot, jpeg()),
   
+  stats_tab   = make_stats_tab(data),
+  
   make_readme = render(
       input         = knitr_in("doc/readme.Rmd"),
       output_format = 'md_document',

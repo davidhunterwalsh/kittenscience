@@ -13,8 +13,18 @@ with(opts_chunk, set(echo = FALSE))
 
 Serious business.
 
+## Kitten Weights
+
 ```{r weights_plot, include = FALSE}
 readd(plot)
 ```
 
 ![](https://github.com/davidhunterwalsh/kittenscience/blob/production/readme_files/figure-markdown_strict/weights_plot-1.png)
+
+Gotta get these numbers up. These are rookie numbers.
+
+## Kitten Stats
+
+```{r stats_tab}
+readd(stats_tab)
+```
