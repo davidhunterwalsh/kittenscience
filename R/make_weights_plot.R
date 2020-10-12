@@ -1,15 +1,8 @@
 make_weights_plot <- function(data) {
   
-  # Define a pretty labeling function for weights in pounds and ounces
-  weight_scale <- function(ounces) {
-    pounds <- ounces %>% divide_by(16) %>% floor()
-    ounces %<>% mod(16)
-    str_glue('{pounds}lb{ounces}oz') %>% str_remove('0lb')
-  }
-  
   data %>% 
     pivot_longer(
-      -Timestamp, 
+      -c(Timestamp, contains('Poop')), 
       names_to       = 'Kitten',
       values_to      = 'Weight',
       values_drop_na = TRUE
@@ -17,6 +10,16 @@ make_weights_plot <- function(data) {
     ggplot(aes(Timestamp, Weight)) %+%
     # Plot the datapoints
     geom_point(aes(color = Kitten)) %+%
+    geom_rug(
+      aes(Timestamp, y = 6, color = Kitten), 
+      sides    = 'b',
+      position = 'jitter',
+      data     = 
+        data %>% 
+        pivot_longer(contains('Poop'), names_to = 'Kitten') %>% 
+        mutate(across(Kitten, str_remove, 'Poop_')) %>% 
+        filter(value)
+    ) %+%
     # Make the loess lines
     geom_smooth(aes(color = Kitten), method = 'loess', formula = 'y ~ x') %+%
     # Add the mean line
@@ -26,7 +29,7 @@ make_weights_plot <- function(data) {
     scale_y_continuous('Weight\n', labels = scale_weights) %+% 
     labs(
       title   = 'Kitten Weights',
-      caption = 'Note: Gray line shows mean weights at feeding times'
+      caption = 'Note: Gray line tracks mean weights at feeding times; rug indicates poops.'
     )
   
 }
