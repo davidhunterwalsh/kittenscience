@@ -16,7 +16,7 @@ the_plan <- drake_plan(
   
   make_readme = render(
       input         = knitr_in("doc/readme.Rmd"),
-      output_format = 'md_document',
+      output_format = md_document('gfm'),
       output_file   = file_out("readme.md"),
       output_dir    = '.'
     )
