@@ -14,7 +14,7 @@ make_stats_tab <- function(data) {
         unlist() %>% 
         mean(),
       'Avg. Std. Deviation Between Kitten Weights' = 
-        mean(sd),
+        mean(sd, na.rm = TRUE),
       'Avg. Gain per Feeding per Kitty'            =
         across(ends_with('_gain'), mean, na.rm = TRUE) %>% 
         unlist() %>% 
