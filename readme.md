@@ -44,7 +44,7 @@ Current Avg. Weight
 
 <td style="text-align:left;">
 
-8.38oz
+8.66oz
 
 </td>
 
@@ -60,7 +60,7 @@ Avg. Std. Deviation Between Kitten Weights
 
 <td style="text-align:left;">
 
-0.64oz
+NAlb NAoz
 
 </td>
 
@@ -76,7 +76,7 @@ Avg. Gain per Feeding per Kitty
 
 <td style="text-align:left;">
 
-0.07oz
+0.06oz
 
 </td>
 
@@ -92,7 +92,7 @@ Avg. Gain per Day per Kitty
 
 <td style="text-align:left;">
 
-0.47oz
+0.44oz
 
 </td>
 
@@ -108,7 +108,7 @@ Avg. Time Between Feedings
 
 <td style="text-align:left;">
 
-2H 51M
+2H 48M
 
 </td>
 
@@ -124,7 +124,7 @@ Expected Avg. Weight at 3 Years of Age
 
 <td style="text-align:left;">
 
-33lb 6oz
+33lb 9oz
 
 </td>
 
