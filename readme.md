@@ -60,7 +60,7 @@ Avg. Std. Deviation Between Kitten Weights
 
 <td style="text-align:left;">
 
-NAlb NAoz
+0.69oz
 
 </td>
 
