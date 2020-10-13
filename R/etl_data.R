@@ -1,6 +1,7 @@
 etl_data <- function() {
   read_sheet('1Eo23GqsjOYIW0Y2bKzJBcmcPj0iXVqIsEzfDjPAALa8') %>% 
     rename(Poop = `Poop?`) %>% 
+    select(-Medication) %>% 
     mutate(across(Poop, list(
       Angus    = . %>% str_detect('A'),
       Brangus  = . %>% str_detect('B'),
