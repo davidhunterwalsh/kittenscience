@@ -44,7 +44,7 @@ Current Avg. Weight
 
 <td style="text-align:left;">
 
-9.41oz
+9.47oz
 
 </td>
 
@@ -108,7 +108,7 @@ Avg. Time Between Feedings
 
 <td style="text-align:left;">
 
-2H 47M
+2H 48M
 
 </td>
 
@@ -124,7 +124,7 @@ Expected Avg. Weight at 3 Years of Age
 
 <td style="text-align:left;">
 
-34lb 6oz
+34lb 10oz
 
 </td>
 
