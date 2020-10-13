@@ -1,8 +1,12 @@
 make_weights_plot <- function(data) {
   
   data %>% 
+    rowwise() %>% 
+    mutate(avg_weight = mean_(c_across(Longhorn:Wagyu))) %>% 
+    ungroup() %>% 
+    mutate(rolling_avg = avg_weight %>% slide_dbl(mean_, .before = 3)) %>% 
     pivot_longer(
-      -c(Timestamp, contains('Poop')), 
+      Longhorn:Wagyu, 
       names_to       = 'Kitten',
       values_to      = 'Weight',
       values_drop_na = TRUE
@@ -23,13 +27,16 @@ make_weights_plot <- function(data) {
     # Make the loess lines
     geom_smooth(aes(color = Kitten), method = 'loess', formula = 'y ~ x') %+%
     # Add the mean line
-    stat_summary(fun = mean, geom = 'line', color = 'darkgray') %+%
+    geom_line(
+      aes(y = rolling_avg),
+      color    = 'darkgray'
+    ) %+%
     # Add some whitespace between the axis labels and the plot
     scale_x_datetime('\nTimestamp') %+%
     scale_y_continuous('Weight\n', labels = scale_weights) %+% 
     labs(
       # title   = 'Kitten Weights',
-      caption = 'Note: Gray line tracks mean weights at feeding times; rug indicates poops.'
+      caption = 'Note: Gray line is 3-feeding rolling average weight; rug indicates poops.'
     )
   
 }
