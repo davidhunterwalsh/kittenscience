@@ -28,7 +28,7 @@ make_weights_plot <- function(data) {
     scale_x_datetime('\nTimestamp') %+%
     scale_y_continuous('Weight\n', labels = scale_weights) %+% 
     labs(
-      title   = 'Kitten Weights',
+      # title   = 'Kitten Weights',
       caption = 'Note: Gray line tracks mean weights at feeding times; rug indicates poops.'
     )
   
