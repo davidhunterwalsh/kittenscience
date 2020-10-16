@@ -44,7 +44,7 @@ Current Avg. Weight
 
 <td style="text-align:left;">
 
-10.59oz
+10.78oz
 
 </td>
 
@@ -92,7 +92,7 @@ Avg. Gain per Day per Kitty
 
 <td style="text-align:left;">
 
-0.51oz
+\-Inflb NaNoz
 
 </td>
 
@@ -124,7 +124,7 @@ Expected Avg. Weight at 3 Years of Age
 
 <td style="text-align:left;">
 
-36lb 9oz
+36lb 13oz
 
 </td>
 
